@@ -11,21 +11,40 @@
       background: #f9fafb;
     }
     .hero {
+      position: relative;
       background: url('a1773147-9181-4250-82a2-a6c490e2667b.png') center/cover no-repeat;
-      height: 60vh;
+      height: 75vh;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.45); /* oscurece la imagen */
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: auto;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
     .price {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: bold;
-      color: #0ea5e9;
-    }
-    .logo {
-      max-height: 70px;
+      color: #facc15;
     }
     .feature-card {
       border-radius: 12px;
@@ -44,34 +63,35 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Navbar -->
   <nav class="navbar navbar-light bg-white shadow-sm px-4">
-    <a class="navbar-brand fw-bold text-dark" href="#">
-      <img src="logo.png" alt="Colinas del Sol" class="logo me-2">
+    <a class="navbar-brand fw-bold text-dark d-flex align-items-center" href="#">
+      <img src="logo.png" alt="Colinas del Sol" class="me-2" style="max-height:50px;">
       Colinas del Sol
     </a>
     <span class="text-muted">Grocio Prado - Chincha</span>
   </nav>
 
   <!-- Hero -->
-  <div class="hero text-center">
-    <div>
-      <h1 class="fw-bold">Preventa de Lotes</h1>
-      <p class="lead">Entrega inmediata en Grocio Prado</p>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Preventa de Lotes</h1>
+      <p>Entrega inmediata en Grocio Prado</p>
+      <p class="price">S/ 6,000 al contado</p>
       <a href="#proyecto" class="btn btn-warning btn-lg fw-bold">Visita nuestro proyecto</a>
     </div>
   </div>
 
-  <!-- Información principal -->
+  <!-- Información -->
   <section id="proyecto" class="container py-5">
     <div class="row align-items-center">
       <div class="col-md-6">
-        <h2 class="fw-bold mb-3">Lotes desde <span class="price">S/ 6,000</span></h2>
-        <p class="text-muted">Pago único al contado. Ubicado en lateral 9 de Grocio Prado, a solo 10 minutos de la Plaza de Armas.</p>
+        <h2 class="fw-bold">Detalles del Proyecto</h2>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">✅ Lotes de 200 m²</li>
-          <li class="list-group-item">✅ Entrega inmediata</li>
-          <li class="list-group-item">✅ Excelente ubicación cerca de la playa</li>
+          <li class="list-group-item">✅ Ubicado en lateral 9 de Grocio Prado</li>
+          <li class="list-group-item">✅ Lotes disponibles de 200 m²</li>
+          <li class="list-group-item">✅ A 10 min. de la Plaza de Armas</li>
+          <li class="list-group-item">✅ Pago único al contado</li>
         </ul>
         <a href="#contacto" class="btn btn-primary mt-4">Contáctanos</a>
       </div>
@@ -81,38 +101,11 @@
     </div>
   </section>
 
-  <!-- Características -->
-  <section class="bg-light py-5">
-    <div class="container text-center">
-      <h3 class="fw-bold mb-4">¿Por qué elegir Colinas del Sol?</h3>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card feature-card shadow-sm p-3">
-            <h5 class="fw-bold">Ubicación Estratégica</h5>
-            <p>A solo minutos de la ciudad, cerca de la Plaza de Armas y zona turística.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card feature-card shadow-sm p-3">
-            <h5 class="fw-bold">Entrega Inmediata</h5>
-            <p>Adquiere tu lote y recíbelo al instante, sin complicaciones.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card feature-card shadow-sm p-3">
-            <h5 class="fw-bold">Precio Accesible</h5>
-            <p>Oportunidad única de inversión a solo S/ 6,000 en un solo pago.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contacto -->
-  <section id="contacto" class="container py-5 text-center">
+  <section id="contacto" class="bg-light py-5 text-center">
     <h3 class="fw-bold mb-4">¡Contáctanos Ahora!</h3>
     <p>Teléfonos: <strong>949767360</strong> | <strong>967141650</strong></p>
-    <p>Oficina: Av. Alfonso Ugarte MZ 9 LT 3 - Frente a la Plaza de Armas Las Alamos - Pueblo Nuevo</p>
+    <p>Oficina: Panamericana Sur y Prolongación Luis Massaro SN - Chincha</p>
     <a href="https://wa.me/51949767360" class="btn btn-success btn-lg">Escríbenos por WhatsApp</a>
   </section>
 
@@ -124,3 +117,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
